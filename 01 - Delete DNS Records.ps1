@@ -6,7 +6,7 @@ write_to_log -ServerInput $ServerInput -log_msg "Virtual Only - VMware Build"
 write_to_log -ServerInput $ServerInput -log_msg "Step 01 - Delete DNS Record(s)"
 Try {
     foreach ($DnsServer in $vmDnsServersInput) {
-        #dnscmd.exe $DnsServer /RecordDelete $domainFQDN $ServerInput A /f
+        dnscmd.exe $DnsServer /RecordDelete $domainFQDN $ServerInput A /f
     }
     write_to_log -ServerInput $ServerInput -log_msg "Success - Step 01 - Delete DNS Record(s)"
 } catch [System.Exception]
