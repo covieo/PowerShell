@@ -11,6 +11,7 @@ param ( [Parameter(mandatory=$true)]$CustomizationTemplateNameInput,
         [Parameter(mandatory=$true)]$newvmLocation, 
         [Parameter(mandatory=$true)]$newvmVMHost, 
         [Parameter(mandatory=$true)]$newvmDatastore )
+. .\'Result Log.ps1'        
 # Step 03 - Deploy VM From Template
 write_to_log -ServerInput $ServerInput -log_msg "Step 03 - Deploy VM From Template"
 $Server = Connect-VIServer -Server $vmhost -User $user -Password $password
