@@ -1,6 +1,13 @@
-param ( $ServerInput, $vmIpAddressInput, $vmSubnetMaskInput, $WINSPrimaryIP, $WINSSecondaryIP, $domainFQDN, $vmDefaultGatewayInput, $vmDnsServersInput )
+param ( [Parameter(mandatory=$true)]$ServerInput, 
+        [Parameter(mandatory=$true)]$vmIpAddressInput, 
+        [Parameter(mandatory=$true)]$vmSubnetMaskInput, 
+        [Parameter(mandatory=$true)]$WINSPrimaryIP, 
+        [Parameter(mandatory=$true)]$WINSSecondaryIP, 
+        [Parameter(mandatory=$true)]$domainFQDN, 
+        [Parameter(mandatory=$true)]$vmDefaultGatewayInput, 
+        [Parameter(mandatory=$true)]$vmDnsServersInput )
 . .\'Result Log.ps1' 
-# Step 08 - Set Static IP by User
+# Step 09 - Set Static IP by User
 write_to_log -ServerInput $ServerInput -log_msg "Step 08 - Set Static IP by User."
 Try {
     Set-ExecutionPolicy RemoteSigned
