@@ -2,7 +2,8 @@ param ( [Parameter(mandatory=$true)]$ServerInput,
         [Parameter(mandatory=$true)]$vmhost, 
         [Parameter(mandatory=$true)]$user,  
         [Parameter(mandatory=$true)][SecureString]$password )
-. .\'Result Log.ps1'        
+. .\'Result Log.ps1'      
+$Server = Connect-VIServer -Server $vmhost -User $user -Password $password  
 # Step 04 - Configure Initial VM Settings 
 write_to_log -ServerInput $ServerInput -log_msg  "Step 04 - Configure Initial VM Settings"
 # Set isolation.tools.setinfo.disable equal to false.
